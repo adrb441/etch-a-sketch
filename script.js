@@ -1,3 +1,4 @@
+/* two loops needed to store squares into rows containers */
 function createGrid(size) {
     const grid = document.querySelector('.container');
     const gridSize = size * size;
@@ -11,16 +12,12 @@ function createGrid(size) {
         }
         grid.appendChild(row);
     }
-    /*
-    const square = document.createElement('div');
-    square.classList.add('square');
-    grid.appendChild(square);*/
 }
 
 function changeSquareColor(e) {
     const square = e.target.className;
     if (square === 'square') {
-        e.target.style.backgroundColor = 'blue';
+        e.target.style.backgroundColor = '#4635E7';
     }
 }
 
@@ -39,7 +36,7 @@ function changeGridSize(e) {
     createGrid(gridSize);
 }
 
-createGrid(3);
+createGrid(16);
 const button = document.querySelector('#btn');
 button.addEventListener('click', changeGridSize);
 window.addEventListener('mouseover', changeSquareColor);
